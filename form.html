@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信息填写表单</title>
+    <style>
+        /* 设置小数点颜色为浅灰色 */
+        .gray-decimal::after {
+            content: '.0000';
+            color: lightgray;
+        }
+        .gray-decimal-5::after {
+            content: '.00000';
+            color: lightgray;
+        }
+        .gray-decimal-6::after {
+            content: '.000000';
+            color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <!-- 链接跳转到表单部分 -->
+    <a href="#form-section">点击这里填写信息</a>
+
+    <h2 id="form-section">信息填写表单</h2>
+    <form action="/submit" method="POST">
+        <label for="name">姓名：</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">电子邮件：</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">电话号码：</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="loan-amount">申请贷款额度：</label>
+        <select id="loan-amount" name="loan-amount" required>
+            <option value="1" class="gray-decimal">1</option>
+            <option value="1.00000" class="gray-decimal-5">1</option>
+            <option value="1.000000" class="gray-decimal-6">1</option>
+        </select><br><br>
+
+        <label for="message">留言：</label><br>
+        <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>
